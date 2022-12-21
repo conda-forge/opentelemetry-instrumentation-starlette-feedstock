@@ -1,65 +1,31 @@
 {% set name = "opentelemetry-instrumentation-starlette" %}
-{% set version = "0.33b0" %}
-
+{% set version = "0.36b0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry-instrumentation-starlette-{{ version }}.tar.gz
-  sha256: 248a2e4734c723da49e91ab8d0a0f32e884781104dc526f27166e800b780c414
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_starlette-{{ version }}.tar.gz
+  sha256: 0580bcde8bd4e03a3cebbe701ad899ab632743197a673e9651dbd1089a058b5e
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python >=3.6
+    - hatchling
   run:
-    - opentelemetry-api ~=1.12
-    - opentelemetry-instrumentation ==0.33b0
-    - opentelemetry-instrumentation-asgi ==0.33b0
-    - opentelemetry-semantic-conventions ==0.33b0
-    - opentelemetry-util-http ==0.33b0
-    - python >=3.6
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test ==0.24b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.26b1
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.27b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.28b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.28b1
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.29b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.30b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.30b1
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.31b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.32b0
-    # - starlette ~=0.13.0
-    # - requests ~=2.23.0
-    # - opentelemetry-test-utils ==0.33b0
-
+    - python >=3.7
+    - opentelemetry-api >=1.12,<2.dev0
+    - opentelemetry-instrumentation-asgi ==0.36b0
+    - opentelemetry-instrumentation ==0.36b0
+    - opentelemetry-semantic-conventions ==0.36b0
+    - opentelemetry-util-http ==0.36b0
 test:
   imports:
     - opentelemetry
