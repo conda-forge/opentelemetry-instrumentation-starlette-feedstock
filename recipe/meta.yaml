@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-instrumentation-starlette" %}
-{% set version = "0.51b0" %}
+{% set version = "0.52b0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_starlette-{{ version }}.tar.gz
-  sha256: 362791667ee7f47f81271f76bd0db2517e8321851ba51634f5bcb6e9fb7a27e8
+  sha256: cfc91665d66ca7989d9b04864616e2e43e9ff8097a1dadf2e41baeb298f96968
 
 build:
   noarch: python
@@ -22,10 +22,10 @@ requirements:
   run:
     - python >={{ python_min }}
     - opentelemetry-api ~=1.12
-    - opentelemetry-instrumentation-asgi ==0.51b0
-    - opentelemetry-instrumentation ==0.51b0
-    - opentelemetry-semantic-conventions ==0.51b0
-    - opentelemetry-util-http ==0.51b0
+    - opentelemetry-instrumentation-asgi ==0.52b0
+    - opentelemetry-instrumentation ==0.52b0
+    - opentelemetry-semantic-conventions ==0.52b0
+    - opentelemetry-util-http ==0.52b0
     # - starlette ~=0.13.0
     # - requests ~=2.23
     # - opentelemetry-test-utils ==0.37b0
@@ -74,6 +74,7 @@ requirements:
     # - starlette ~=0.13.0
     # - starlette ~=0.13.0
     # - starlette ~=0.13.0
+    # - starlette <0.15,>=0.13
 test:
   imports:
     - opentelemetry
